@@ -13,7 +13,8 @@
     "vite": "^7.2.4",
     "vite-plugin-image-optimizer": "^2.0.3",
     "vite-plugin-inspect": "^11.3.3",
-    "vite-plugin-handlebars": "^2.0.0"
+    "vite-plugin-handlebars": "^2.0.0",
+    "vite-plugin-svg-spriter": "^1.0.0"
   },
   "dependencies": {
     "collect.js": "^4.36.1"

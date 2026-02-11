@@ -2,16 +2,19 @@ import Inspect from 'vite-plugin-inspect'
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import createSvgSpritePlugin from 'vite-plugin-svg-spriter'
 import handlebars from 'vite-plugin-handlebars';
 
 
 // const root = resolve(__dirname, '.')
-const root = resolve(__dirname, './src')
-const outDir = resolve(__dirname, 'dist')
+const root = resolve(__dirname, './src/')
+const outDir = resolve(__dirname, './dist/')
+
+const FRONT_PATH = 'src';
 
 export default defineConfig({
-    base: './',
-    root,
+    base: "/vite-prj-nmb/",
+    root: 'src',
     preview: {
         port: 8080,
         strictPort: true,
@@ -34,17 +37,19 @@ export default defineConfig({
             },
         }),
         Inspect(),
+        createSvgSpritePlugin({
+            svgFolder: resolve(__dirname,`${FRONT_PATH}/assets/images/svg`),
+        }),
         ViteImageOptimizer({
-            // https://github.com/FatehAK/vite-plugin-image-optimizer
+            jpg: {
+                quality: 75
+            },
             png: {
-                quality: 70,
+                quality: 75
             },
             jpeg: {
-                quality: 70,
-            },
-            jpg: {
-                quality: 70,
-            },
+                quality: 75
+            }
         }),
     ],
 
@@ -61,9 +66,9 @@ export default defineConfig({
         cssMinify: true,
         rollupOptions: {
             input: {
-                main: resolve(root, 'index.html'),
-                about: resolve(root, 'pages/about.html'),
-                category: resolve(root, 'pages/category.html'),
+                index: resolve(__dirname, `${FRONT_PATH}/index.html`),
+                about: resolve(__dirname, `${FRONT_PATH}/pages/about.html`),
+                category: resolve(__dirname, `${FRONT_PATH}/pages/category.html`),
             },
             output: {
                 assetFileNames: ({ name }) => {
@@ -84,3 +89,5 @@ export default defineConfig({
         }
     },
 })
+
+
