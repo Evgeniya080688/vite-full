@@ -13,7 +13,7 @@ const outDir = resolve(__dirname, './dist/')
 const FRONT_PATH = 'src';
 
 export default defineConfig({
-    base: "/vite-prj-nmb/",
+    base: "./",
     root: 'src',
     preview: {
         port: 8080,

@@ -1,7 +1,7 @@
 Сборка статического проека на vite с шаблонизатором и препроцессором
 
 ##Прототипы
-https://www.figma.com/file/I7puc6HaDDG8MNDMNRrsNn/Untitled?node-id=15%3A104&t=k0zYVhAcJz3gK208-0
+https://kvt-service.tools/
 
 ## Использование
 
